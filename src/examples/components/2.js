@@ -16,7 +16,7 @@ function Welcome(props) {
       <div>
         <Welcome name="Deepak" />
         <Welcome name="DJ" />
-        <Welcome name="PanditJi" />
+        <Welcome name="Kumar" />
       </div>
     );
   }
