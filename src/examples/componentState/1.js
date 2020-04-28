@@ -16,9 +16,12 @@ class Clock extends React.Component {
   }
 
   tick() {
+    //updating state
     this.setState({
       date: new Date(),
     });
+  // THIS YOU SHOULD NEVER DO
+    // this.state = { date: new Date() };
   }
 
   render() {
