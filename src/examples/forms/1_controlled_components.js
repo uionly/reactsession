@@ -21,6 +21,7 @@ class NameForm extends React.Component {
   
     render() {
       return (
+        <div>
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
@@ -28,6 +29,8 @@ class NameForm extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
+        <div> You are typing {this.state.value} ..... </div>
+        </div>
       );
     }
   }

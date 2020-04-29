@@ -1,26 +1,6 @@
-// When the ref attribute is used on a custom class component, the ref object 
-// receives the mounted instance of the component as its current.
 import React from 'react';
 import ReactDOM from 'react-dom';
-class AutoFocusTextInput extends React.Component {
-    constructor(props) {
-      super(props);
-      this.textInput = React.createRef();
-    }
-  
-    componentDidMount() {
-      this.textInput.current.focusTextInput();
-    }
-  
-    render() {
-      return (
-        <CustomTextInput ref={this.textInput} />
-      );
-    }
-  }
-
-
-  class CustomTextInput extends React.Component {
+class CustomTextInput extends React.Component {
     constructor(props) {
       super(props);
       // create a ref to store the textInput DOM element
@@ -55,8 +35,15 @@ class AutoFocusTextInput extends React.Component {
       );
     }
   }
-  
+
+  // React will assign the current property with the DOM element when the component
+  // mounts, and assign it back to null when it unmounts. ref updates happen before 
+  // componentDidMount or componentDidUpdate lifecycle methods.
+
   ReactDOM.render(
-    <AutoFocusTextInput />,
+    <CustomTextInput />,
     document.getElementById('root')
   );
+
+
+
